@@ -1,0 +1,4 @@
+def pytest_configure(config):
+    config.bdd_features_base_dir = "C:\\PlayWright_automation\\features"
+
+scenarios(r"C:\\PlayWright_automation\\features\\orderTransaction.feature")
