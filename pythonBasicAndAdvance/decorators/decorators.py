@@ -1,9 +1,31 @@
 # Decorators: Its a function that wraps another fn
 # Without modifiying the original fn behaviour
-
+# A decorator in Python is a function that wraps another
+#  function to extend its behavior without modifying 
+# the original function. It leverages 
+# first-class functions and closures and is
+#  commonly used for logging, retry logic, 
+# access control, and framework-level enhancements.
 # Think like function + extra logic
 
 # We can assign fn to a varables
+
+# Why decorators are important for you
+
+# ✔ retry logic
+# ✔ logging
+# ✔ timing execution
+# ✔ auth handling
+# ✔ screenshots on failure
+# ✔ reporting hooks
+
+# Pytest Uses Decorators Everywhere
+# @pytest.fixture
+# def setup(): pass
+
+# @pytest.mark.smoke
+# def test_login(): pass
+
 
 def greet():
     return "Hello,world"
@@ -73,3 +95,16 @@ def call_api_with_retry():
 
 call_api_with_retry()
 
+
+def main_fn(func):
+    def wrapper():
+        print("START")
+        func()
+        print("END")
+    return wrapper
+
+@main_fn
+def test_fn():
+    print("Main test")
+
+test_fn()

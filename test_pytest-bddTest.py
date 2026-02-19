@@ -1,6 +1,6 @@
 from pytest_bdd import given, scenarios, when, then, parsers
 import pytest
-from conftest import user_credentials
+from pythonBasicAndAdvance.conftest import user_credentials
 from pageObjects.login import LoginPage
 from utils.apiBase import APIUtils
 
